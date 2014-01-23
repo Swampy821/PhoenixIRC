@@ -1,8 +1,8 @@
 /*-----------------BOT CONFIG-----------------*/
-exports.channels = ['##antib9'];
+exports.channels = ['##dicrew'];
 
 exports.server =  "irc.freenode.net";
 
-exports.botName = "PhoenixIRC";
+exports.botName = "Sherilz";
 
 exports.nicks = '';
