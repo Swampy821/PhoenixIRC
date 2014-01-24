@@ -12,3 +12,5 @@ exports.realName = 'PhoenixIRC';
 exports.nicks = '';
 
 exports.autoOp=true;
+
+exports.fuckYeah=true;
