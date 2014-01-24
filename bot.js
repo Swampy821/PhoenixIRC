@@ -8,7 +8,9 @@ var fs = require('fs');
 var plugins = Array();
 
 var bot = new irc.Client(config.server, config.botName, {
-  channels:config.channels
+  channels:config.channels,
+  userName:config.userName,
+  realName:config.realName
 });
 
 
