@@ -10,3 +10,5 @@ exports.userName = 'PhoenixIRC';
 exports.realName = 'PhoenixIRC';
 
 exports.nicks = '';
+
+exports.autoOp=true;
