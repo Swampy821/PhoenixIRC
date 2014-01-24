@@ -11,7 +11,7 @@ exports.message = function(from, to, text, message, bot, config){
     //Are you talking to the bot?
     if(messageArray[0]==config.botName && messageArray.length>1) {
           //Opper
-          if(messageArray[1].toLowerCase()=='op') {
+          if(messageArray[1].toLowerCase()=='op' && config.autoOpChannels.indexOf(to.toLowerCase())>-1) {
              if(messageArray[2]!=config.botName) {
                 if(config.nicks[messageArray[2]]!=undefined) {
                   bot.send('MODE', channel, '+o', messageArray[2]);
@@ -20,7 +20,7 @@ exports.message = function(from, to, text, message, bot, config){
               
           }
           //Deopper
-          if(messageArray[1].toLowerCase()=='deop') {
+          if(messageArray[1].toLowerCase()=='deop' && config.autoOpChannels.indexOf(to.toLowerCase())>-1) {
                if(messageArray[2]!=config.botName) {
                  if(config.nicks[messageArray[2]]!=undefined) {
                     bot.send('MODE', channel, '-o', messageArray[2]);
