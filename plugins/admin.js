@@ -38,7 +38,7 @@ exports.message = function(from, to, text, message, bot, config){
 
 //JOIN EVENT
 exports.join = function(channel, nick, message, bot, config){
-    if(nick != config.botName && config.autoOp==true) {
+    if(nick != config.botName && config.autoOp==true && config.autoOpChannels.indexOf(channel.toLowerCase())>-1) {
         bot.send('MODE', config.channels[0], '+o', nick);
     }
 }
