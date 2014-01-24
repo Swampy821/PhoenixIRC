@@ -5,7 +5,7 @@ exports.server =  "irc.freenode.net";
 
 exports.botName = "ZBot";
 
-exports.userName = 'PhoenixIRC';
+exports.userName = 'SPhoenixIRC';
 
 exports.realName = 'PhoenixIRC';
 
