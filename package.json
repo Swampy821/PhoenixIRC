@@ -1,0 +1,28 @@
+{
+    "name": "PhoenixIRC",
+    "description" : "A totally awesome bot written in NodeJS",
+    "version": "0.0.1",
+    "contributors" : [
+        {
+            "name" : "SkySom"
+        },
+        {
+            "name" : "Swampy821"
+        }
+    ],
+    "dependencies" : {
+        "irc" : "*"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/Swampy821/PhoenixIRC.git"
+    },
+    "keywords" : [
+        "irc",
+        "bot"
+    ],
+    "license" : "MIT",
+    "engines" : {
+        "node" : ">=0.10"
+    }
+}
