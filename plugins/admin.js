@@ -9,16 +9,19 @@ exports.message = function(from, to, text, message, bot, config){
     messageArray[0] = messageArray[0].substring(0,messageArray[0].length-1);
     //Are you talking to the bot?
     if(messageArray[0]==config.botName) {
-
+          //Opper
           if(messageArray[1].toLowerCase()=='op') {
-                console.log('Opping '+messageArray[2]);
                 bot.send('MODE', config.channels[0], '+o', messageArray[2]);
           }
-
+          //Deopper
           if(messageArray[1].toLowerCase()=='deop') {
                if(messageArray[2]!=config.botName) {
                     bot.send('MODE', config.channels[0], '-o', messageArray[2]);
                }
+          }
+          //Quitter
+          if(messageArray[1].toLowerCase()=='die' && config.admins.indexOf(from)>-1) {
+               process.exit();
           }
 
 

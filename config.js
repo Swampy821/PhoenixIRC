@@ -9,6 +9,8 @@ exports.userName = 'PhoenixIRC';
 
 exports.realName = 'PhoenixIRC';
 
+exports.admins = ['Zimdale','Skysom'];
+
 exports.nicks = '';
 
 exports.autoOp=true;

@@ -1,0 +1,4 @@
+PhoenixIRC
+==========
+
+Amazing Node Bot!
