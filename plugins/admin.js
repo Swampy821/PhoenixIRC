@@ -8,7 +8,7 @@ exports.message = function(from, to, text, message, bot, config){
     //Trim Character.
     messageArray[0] = messageArray[0].substring(0,messageArray[0].length-1);
     //Are you talking to the bot?
-    if(messageArray[0]==config.botName && messageArray.length>2) {
+    if(messageArray[0]==config.botName && messageArray.length>1) {
           //Opper
           if(messageArray[1].toLowerCase()=='op') {
                 bot.send('MODE', config.channels[0], '+o', messageArray[2]);
