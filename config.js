@@ -3,9 +3,9 @@ exports.channels = ['##PhoenixIRC'];
 
 exports.server =  "irc.freenode.net";
 
-exports.botName = "ZBot";
+exports.botName = "PhoenixIRC";
 
-exports.userName = 'SPhoenixIRC';
+exports.userName = 'PhoenixIRC';
 
 exports.realName = 'PhoenixIRC';
 

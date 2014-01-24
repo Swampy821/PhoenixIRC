@@ -25,6 +25,7 @@ require('fs').readdirSync(__dirname + '/plugins/').forEach(function(file) {
 
 //Message Listener
 bot.addListener("message", function (from, to, text, message){
+    console.log(text);
     for(var i=0;i<plugins.length;i++)
     {
       if(typeof plugins[i].message == 'function'){
