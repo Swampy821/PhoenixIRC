@@ -3,7 +3,7 @@ exports.channels = ['##PhoenixIRC'];
 
 exports.server =  "irc.freenode.net";
 
-exports.botName = "PhoenixIRC";
+exports.botName = "SPhoenixIRC";
 
 exports.userName = 'PhoenixIRC';
 
