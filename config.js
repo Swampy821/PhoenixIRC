@@ -28,3 +28,6 @@ exports.FML=true;
 
 /**Fuck yeah Plugin**/
 exports.fuckYeah=true;
+
+/**Google Search Plugin**/
+exports.google=true;
