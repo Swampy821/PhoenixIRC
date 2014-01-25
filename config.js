@@ -23,5 +23,8 @@ exports.greets = true;
 /**Dice Plugin**/
 exports.dice = true;
 
-/**FML Plugins**/
+/**FML Plugin**/
 exports.FML=true;
+
+/**Fuck yeah Plugin**/
+exports.fuckYeah=true;
