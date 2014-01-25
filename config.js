@@ -34,3 +34,6 @@ exports.google=true;
 
 /**Define plugin**/
 exports.define=true;
+
+/**Adult plugin**/
+exports.Adult=true;
