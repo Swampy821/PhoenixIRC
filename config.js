@@ -37,3 +37,6 @@ exports.define=true;
 
 /**Adult plugin**/
 exports.Adult=true;
+
+/**Beer Plugin**/
+exports.Beer=true;
