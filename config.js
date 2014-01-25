@@ -3,7 +3,7 @@ exports.channels = ['##PhoenixIRC'];
 
 exports.server =  "irc.freenode.net";
 
-exports.botName = "PhoeBot";
+exports.botName = "PhoenixIRC";
 
 exports.userName = 'PhoenixIRC';
 
@@ -13,6 +13,9 @@ exports.admins = ['Zimdale','Skysom'];
 
 exports.nicks = '';
 
-exports.autoOp=true;
+exports.autoOp=false;
 
 exports.autoOpChannels = ['##phoenixirc'];
+
+/**Greeting Plugin**/
+exports.greets = true;
