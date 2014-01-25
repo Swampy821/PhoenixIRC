@@ -14,3 +14,11 @@ Install npm modules
 npm install
 ```
 
+
+
+TODO
+
+- [ ] Gather youtube information
+- [ ] Chat Log
+- [ ] Quoating system
+- [ ] Karma
