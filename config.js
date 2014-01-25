@@ -40,3 +40,6 @@ exports.Adult=true;
 
 /**Beer Plugin**/
 exports.Beer=true;
+
+/**Jokes plugin**/
+exports.Jokes=true;
