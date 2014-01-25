@@ -5,7 +5,7 @@
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
     var messageArray = text.split(' ');
-    var channel = message.args[0];
+    var channel = to;
     //Trim Character.
     messageArray[0] = messageArray[0].substring(0,messageArray[0].length-1);
     //Are you talking to the bot?
