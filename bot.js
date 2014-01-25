@@ -36,7 +36,7 @@ bot.addListener("message", function (from, to, text, message){
 bot.addListener("join", function (channel, nick, message) { 
   for(var i=0;i<plugins.length;i++)
     {
-      if(typeof plugins[i].message == 'function'){
+      if(typeof plugins[i].join == 'function'){
         plugins[i].join(channel, nick, message, bot, config);
       }
     }
@@ -45,7 +45,7 @@ bot.addListener("join", function (channel, nick, message) {
 bot.addListener("part", function (channel, nick, message) { 
   for(var i=0;i<plugins.length;i++)
     {
-      if(typeof plugins[i].message == 'function'){
+      if(typeof plugins[i].part == 'function'){
         plugins[i].part(channel, nick, message, bot, config);
       }
     }
@@ -54,7 +54,7 @@ bot.addListener("part", function (channel, nick, message) {
 bot.addListener("raw", function (message) { 
   for(var i=0;i<plugins.length;i++)
     {
-      if(typeof plugins[i].message == 'function'){
+      if(typeof plugins[i].raw == 'function'){
         plugins[i].raw(message, bot, config);
       }
     }
@@ -64,7 +64,7 @@ bot.addListener("raw", function (message) {
 bot.addListener("action", function (from, to, message) { 
   for(var i=0;i<plugins.length;i++)
     {
-      if(typeof plugins[i].message == 'function'){
+      if(typeof plugins[i].action == 'function'){
         plugins[i].action(from, to, message, bot, config);
       }
     }
