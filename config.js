@@ -18,7 +18,10 @@ exports.autoOp=false;
 exports.autoOpChannels = ['##phoenixirc'];
 
 /**Greeting Plugin**/
-exports.greets = true;
+exports.greets = true;	
 
 /**Dice Plugin**/
 exports.dice = true;
+
+/**FML Plugins**/
+exports.FML=true;
