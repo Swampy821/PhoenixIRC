@@ -1,4 +1,3 @@
-
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
 
