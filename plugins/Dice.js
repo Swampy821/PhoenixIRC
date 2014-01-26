@@ -47,7 +47,7 @@ function theDice() {
 exports.message = function(from, to, text, message, bot, config){
 	if(config.dice==true) {
 		var txt = text.split(' ');
-		if(txt[0].toLowerCase().indexOf(config.botName.toLowerCase())>-1) {
+		if(txt[0].toLowerCase().indexOf(config.botName.toLowerCase())>-1 && txt.length>1) {
 			if(txt[1].toLowerCase()=='roll' && txt.length>2) {
 				var d = new theDice();
 				var results = d.rollDice(txt[2]);
