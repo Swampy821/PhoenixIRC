@@ -11,9 +11,9 @@ exports.realName = 'PhoenixIRC';
 
 exports.admins = ['Zimdale','Skysom'];
 
-exports.nicks = '';
+exports.nicks = Array();
 
-exports.autoOp=false;
+exports.autoOp=true;
 
 exports.autoOpChannels = ['##phoenixirc'];
 

@@ -5,7 +5,6 @@ exports.message = function(from, to, text, message, bot, config){
 		var googleCount=0;
 		if(msg.length>1) {
 
-
 			for(var i=0;i<msg.length-1;i++) {
 				if(msg[i].length>1) {
 					googleCount++;
