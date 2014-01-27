@@ -1,9 +1,35 @@
+function adminTools() {
+    function lCaseNicks(nicks) {
+        var arr = Array();
+        for(var i=0; i<nicks.length-1;i++) {
+          arr[i] = nicks[i].toLowerCase();
+        }
+        return arr;
+    }
+
+
+    this.kick = function(text, bot, config, to) {
+        text = text.split(' ');
+        if(text.length>2) {
+            var nicks = lCaseNicks(config.nicks[to]);
+            if(nicks.indexOf(text[2].toLowerCase())>-1) {
+                bot.send('KICK',to,text[2]);
+            }
+        }
+    };
+
+
+}
+
+
+
 
 
 
 
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
+  var adminTool = new adminTools();
     var messageArray = text.split(' ');
     var channel = to;
     //Trim Character.
@@ -32,6 +58,9 @@ exports.message = function(from, to, text, message, bot, config){
           //Quitter
           if(messageArray[1].toLowerCase()=='die' && config.admins.indexOf(from)>-1) {
                process.exit();
+          }
+          if(messageArray[1].toLowerCase()=='kick' && config.admins.indexOf(from)>-1) {
+              adminTool.kick(text, bot, config, to);
           }
     }
 }
