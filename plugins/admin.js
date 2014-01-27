@@ -17,7 +17,18 @@ function adminTools() {
             }
         }
     };
+    
 
+    this.voice = function(bot, config, text, to) {
+	text = text.split(' ');
+	if(text.length>2) {
+		var nicks = lCaseNicks(config.nicks[to]);
+		if(nicks.indexOf(text[2].toLowerCase())>-1) {
+			bot.send('MODE',to,'+v',text[2]);
+		}
+	}
+
+    }
 
 }
 
@@ -62,6 +73,9 @@ exports.message = function(from, to, text, message, bot, config){
           if(messageArray[1].toLowerCase()=='kick' && config.admins.indexOf(from)>-1) {
               adminTool.kick(text, bot, config, to);
           }
+	if(messageArray[1].toLowerCase()=='voice' && config.admins.indexOf(from)>-1) {
+	adminTool.voice(bot,config,text,to);
+	}
     }
 }
 
