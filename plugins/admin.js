@@ -24,7 +24,11 @@ function adminTools() {
 	if(text.length>2) {
 		var nicks = lCaseNicks(config.nicks[to]);
 		if(nicks.indexOf(text[2].toLowerCase())>-1) {
-			bot.send('MODE',to,'+v',text[2]);
+      try{
+			   bot.send('MODE',to,'+v',text[2]);
+      }catch(e) {
+         console.log(e);
+      }
 		}
 	}
 
@@ -52,10 +56,18 @@ function adminTools() {
 
    
     this.unBan = function(bot, config, text, to) {
-	text = text.split(' ');
-	if(text.length>2) {
-		bot.send('MODE',to,'-b',text[2]);
-	}
+    	text = text.split(' ');
+    	if(text.length>2) {
+    		bot.send('MODE',to,'-b',text[2]);
+    	}
+    }
+
+    this.hear = function(messageArray, config, to, whatToHear) {
+        if(messageArray[1].toLowerCase()==whatToHear.toLowerCase() && config.autoOpChannels.indexOf(to.toLowerCase())>-1) {
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
@@ -95,31 +107,31 @@ exports.message = function(from, to, text, message, bot, config){
                }
           }
           //Quitter
-          if(messageArray[1].toLowerCase()=='die' && config.admins.indexOf(from)>-1) {
+          if(adminTool.hear(messageArray,config,to,'die')) {
                process.exit();
           }
-          if(messageArray[1].toLowerCase()=='kick' && config.admins.indexOf(from)>-1) {
+          if(adminTool.hear(messageArray,config,to,'kick')) {
               adminTool.kick(text, bot, config, to);
           }
-	if(messageArray[1].toLowerCase()=='voice' && config.admins.indexOf(from)>-1) {
-	adminTool.voice(bot,config,text,to);
-	}
-	if(messageArray[1].toLowerCase()=='devoice' && config.admins.indexOf(from)>-1) {
-	adminTool.deVoice(bot,config,text,to);
-	}
-	if(messageArray[1].toLowerCase()=='ban' && config.admins.indexOf(from)>-1) {
-	adminTool.ban(bot,config,text,to);
-	}
-	if(messageArray[1].toLowerCase()=='unban' && config.admins.indexOf(from)>-1) {
-	adminTool.unBan(bot,config,text,to);
-	}
+        	if(adminTool.hear(messageArray,config,to,'voice')) {
+        	   adminTool.voice(bot,config,text,to);
+        	}
+        	if(adminTool.hear(messageArray,config,to,'devoice')) {
+        	   adminTool.deVoice(bot,config,text,to);
+        	}
+        	if(adminTool.hear(messageArray,config,to,'ban')) {
+        	   adminTool.ban(bot,config,text,to);
+        	}
+        	if(adminTool.hear(messageArray,config,to,'unban')) {
+        	   adminTool.unBan(bot,config,text,to);
+        	}
     }
 }
 
 //JOIN EVENT
 exports.join = function(channel, nick, message, bot, config){
   for(var i=0;i<config.autoOpChannels.length-1;i++) {
-    config.autoOpChannels[i] = config.autoOpChannels[i].toLowerCase();  
+      config.autoOpChannels[i] = config.autoOpChannels[i].toLowerCase();  
   }
     if(nick != config.botName && config.autoOp==true && config.autoOpChannels.indexOf(channel.toLowerCase())>-1) {
         bot.send('MODE', channel, '+o', nick);
