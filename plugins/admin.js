@@ -24,11 +24,7 @@ function adminTools() {
 	if(text.length>2) {
 		var nicks = lCaseNicks(config.nicks[to]);
 		if(nicks.indexOf(text[2].toLowerCase())>-1) {
-      try{
 			   bot.send('MODE',to,'+v',text[2]);
-      }catch(e) {
-         console.log(e);
-      }
 		}
 	}
 
