@@ -63,3 +63,22 @@ Tell a joke
 ```
 lets hear a joke
 ```
+
+##FML
+
+Get FML
+```
+.fml
+```
+
+##Dice
+Roll Dice
+```
+<botname>: roll <# Of Dice>d<# of faces>
+```
+
+##Google
+Query Google
+```
+<botname>: google <statement to google>
+```
