@@ -55,3 +55,11 @@ die
 ```
 <botname>: die
 ```
+
+
+##Jokes
+
+Tell a joke
+```
+lets hear a joke
+```
