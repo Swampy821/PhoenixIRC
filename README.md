@@ -1,5 +1,4 @@
 PhoenixIRC
-#look into compression methods.
 ==========
 
 A node Bot.
