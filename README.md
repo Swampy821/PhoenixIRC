@@ -85,5 +85,6 @@ Query Google
 ```
 
 ##Fuck Yeah
-<pre>
-fuck yeah message
+```
+fuck yeah <message>
+```
