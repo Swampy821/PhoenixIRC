@@ -87,4 +87,3 @@ Query Google
 ##Fuck Yeah
 <pre>
 fuck yeah message
-<\pre>
