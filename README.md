@@ -1,4 +1,5 @@
 PhoenixIRC
+#look into compression methods.
 ==========
 
 A node Bot.
@@ -82,3 +83,8 @@ Query Google
 ```
 <botname>: google <statement to google>
 ```
+
+##Fuck Yeah
+<pre>
+fuck yeah <message>
+<\pre>
