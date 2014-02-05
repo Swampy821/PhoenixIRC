@@ -3,7 +3,7 @@
 var forever = require('forever-monitor');
 
 var child = new (forever.Monitor)('bot.js', {
-    max: 1,
+    max: 3,
     silent: true,
 	options: []
 });
