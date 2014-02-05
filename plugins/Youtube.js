@@ -15,7 +15,7 @@ exports.message = function(from, to, text, message, bot, config) {
             query = query.trim();
             query = encodeURIComponent(query);
             var options = {
-                hostname : "http://gdata.youtube.com",
+                hostname : "gdata.youtube.com",
                 path : "/feeds/api/videos?v=2&orderby=relevance&paid-content=false&alt=jsonc&duration=long&query=" + query
             }
             console.log(options.hostname + options.path);
@@ -29,30 +29,19 @@ exports.message = function(from, to, text, message, bot, config) {
                 resp.on('end',function() {
                     try{
                         js = JSON.parse(chk);
+                        console.log(js.length);
                         if(js.length>0) {
-                            bot.say(to, from+': '+js[0].text);
+                            bot.say(to, "The length of js is " + js.length);
                         }else{
-                            bot.say(to, from+': I do not have a definition for that word');
+                            bot.say(to, "There is nothing");
                         }
                     }catch(e) {
-                        bot.say(to, from+': Invalid character');
+                        bot.say(to, "Error " + e);
                     }
                 });
                 resp.on('err', function(e) {
                    bot.say(to, e);
                 });
-            });
-
-            var req = http.request(options, function(response) {
-                bot.say(to, "Making the request");
-            });
-
-            req.on('data', function(chunk) {
-               bot.say(to, "Recieving data");
-            });
-
-            req.on('error', function(e) {
-                bot.say(to, 'q=' + query + e);
             });
 
             bot.say(to, "Youtubing " + query);
