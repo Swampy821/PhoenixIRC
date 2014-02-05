@@ -11,7 +11,8 @@
         }
     ],
     "dependencies" : {
-        "irc" : "*"
+        "irc" : "*",
+        "forever-monitor" : "1.1"
     },
     "repository" : {
         "type" : "git",
