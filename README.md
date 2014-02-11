@@ -87,3 +87,8 @@ Query Google
 ```
 fuck yeah <message>
 ```
+
+##Bitcoin
+```
+bitcoin price
+```
