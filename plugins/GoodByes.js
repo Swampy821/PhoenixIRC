@@ -29,10 +29,12 @@ var waysToSayGoodNight = [
 
 //Message Event
 exports.message = function(from, to, text, message, bot, config) {
-    var patt = new RegExp("good bye|bye|nighty night" , "i");
-    var res = patt.test(text);
-    if(res) {
-        var randomNumber = Math.floor(Math.random() * waysToSayGoodNight.length);
-        bot.say(to, waysToSayGoodNight[randomNumber]);
+    if(config.plugins.goodbyes) {
+        var patt = new RegExp("good bye|bye|nighty night" , "i");
+        var res = patt.test(text);
+        if(res) {
+            var randomNumber = Math.floor(Math.random() * waysToSayGoodNight.length);
+            bot.say(to, waysToSayGoodNight[randomNumber]);
+        }
     }
 }

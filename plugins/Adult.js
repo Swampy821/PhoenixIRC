@@ -11,7 +11,7 @@ adultImageArray = [
 
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
- 	if(config.Adult==true && text.toLowerCase().indexOf('like an adult')>-1) {
+ 	if(config.plugins.adult==true && text.toLowerCase().indexOf('like an adult')>-1) {
  		 var Indx =  Math.floor(Math.random() * (adultImageArray.length-1));
  		 bot.say(to, adultImageArray[Indx]);
 

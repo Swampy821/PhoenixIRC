@@ -22,7 +22,7 @@ function FML(bot, to) {
 
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-	if(text.toLowerCase()=='.fml' && config.FML==true) {
+	if(text.toLowerCase()=='.fml' && config.plugins.fml==true) {
 		FML(bot,to);
 	}
 }

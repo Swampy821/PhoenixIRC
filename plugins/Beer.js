@@ -20,7 +20,7 @@ beerArray = [
 
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-	if(config.Beer==true && text.toLowerCase().indexOf('beer')>-1) {
+	if(config.plugins.beer==true && text.toLowerCase().indexOf('beer')>-1) {
  		 var Indx =  Math.floor(Math.random() * (beerArray.length-1));
  		 bot.say(to, beerArray[Indx]);
 

@@ -17,29 +17,21 @@ exports.autoOp=true;
 
 exports.autoOpChannels = ['##phoenixirc'];
 
-/**Greeting Plugin**/
-exports.greets = true;	
-
-/**Dice Plugin**/
-exports.dice = true;
-
-/**FML Plugin**/
-exports.FML=true;
-
-/**Fuck yeah Plugin**/
-exports.fuckYeah=true;
-
-/**Google Search Plugin**/
-exports.google=true;
-
-/**Define plugin**/
-exports.define=true;
-
-/**Adult plugin**/
-exports.Adult=true;
-
-/**Beer Plugin**/
-exports.Beer=true;
-
-/**Jokes plugin**/
-exports.Jokes=true;
+exports.plugins = {
+	"admin": true,
+	"adult": true,
+	"beer": true,
+	"bitcoin": true,
+	"define": true,
+	"dice": true,
+	"fml": true,
+	"fuckyeah": true,
+	"goodbyes": true,
+	"google": true,
+	"greets": true,
+	"jokes": true,
+	"liar": true,
+	"quotes": false,
+	"towel": true,
+	"youtube": false
+};
