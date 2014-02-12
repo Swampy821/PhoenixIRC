@@ -1,6 +1,6 @@
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-	if(config.google==true) {
+	if(config.plugins.google) {
 		var msg = text.split(' ');
 		var googleCount=0;
 		if(msg.length>1) {

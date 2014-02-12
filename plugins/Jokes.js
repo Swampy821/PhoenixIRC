@@ -1,6 +1,6 @@
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-	if(config.Jokes==true && text.toLowerCase().indexOf('lets hear a joke')>-1) {
+	if(config.plugins.jokes && text.toLowerCase().indexOf('lets hear a joke')>-1) {
 			var http = require('http');
 			var options = {
 			  host: 'www.jokels.com',

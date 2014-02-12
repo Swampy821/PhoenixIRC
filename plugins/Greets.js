@@ -32,7 +32,7 @@ var helloWait=false;
 
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-	if(config.greets==true) {
+	if(config.plugins.greet) {
 		var h = new Hello();
 		if(h.isGreet(text)==true) {
 			if(helloWait==false) {

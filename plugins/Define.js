@@ -1,6 +1,6 @@
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-	if(config.define==true) {
+	if(config.plugins.define) {
 		text = text.split(' ');
 		if(text.length>1 && text[0].toLowerCase().indexOf(config.botName.toLowerCase())>-1 && text[1].toLowerCase()=='define') {
 			var http = require('http');

@@ -7,7 +7,7 @@ var http = require("http");
 
 // MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-	if(config.Bitcoin == true) {
+	if(config.plugins.bitcoin) {
 		var validationPattern = new RegExp("bitcoin price" , "gi");
 
 		if (validationPattern.test(text)) { // If "bitcoin price" is anywhere in the message

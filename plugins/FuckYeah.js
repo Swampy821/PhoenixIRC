@@ -4,7 +4,7 @@
  */
 //Message Event
 exports.message = function(from, to, text, message, bot, config) {
-    if(config.fuckYeah==true) {
+    if(config.plugins.fuckyeah) {
         var patt = new RegExp("fuck yeah" , "i");
         var res = patt.test(text);
         if(res) {
