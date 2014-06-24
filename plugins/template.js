@@ -1,3 +1,7 @@
+// Plugin initialization.
+exports.init = function (bot, config) {
+}
+
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
 

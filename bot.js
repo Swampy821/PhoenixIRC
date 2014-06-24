@@ -1,8 +1,5 @@
-
 var config = require("./config.js");
-
 var irc = require("irc");
-
 var fs = require('fs');
 
 var plugins = Array();
@@ -19,7 +16,12 @@ var i = 0;
 require('fs').readdirSync(__dirname + '/plugins/').forEach(function(file) {
   if (file.match(/.+\.js/g) !== null && file !== 'index.js') {
     plugins[i] = require('./plugins/' + file);
-    i++;
+
+	if (typeof plugins[i].init == 'function') {
+		plugins[i].init(bot, config);
+	}
+
+	i++;
   }
 });
 
