@@ -14,7 +14,7 @@ var bot = new irc.Client(config.server, config.botName, {
 });
 
 
-// Auto Load All Plugins
+// Auto Load All Plugins.
 var i = 0;
 require('fs').readdirSync(__dirname + '/plugins/').forEach(function(file) {
   if (file.match(/.+\.js/g) !== null && file !== 'index.js') {
@@ -23,7 +23,7 @@ require('fs').readdirSync(__dirname + '/plugins/').forEach(function(file) {
   }
 });
 
-//Message Listener
+// Message Listener.
 bot.addListener("message", function (from, to, text, message){
     for(var i=0;i<plugins.length;i++)
     {
@@ -32,7 +32,8 @@ bot.addListener("message", function (from, to, text, message){
       }
     }
 });
-//JOIN EVENT HANDLER
+
+// Join event handler.
 bot.addListener("join", function (channel, nick, message) { 
   for(var i=0;i<plugins.length;i++)
     {
@@ -41,7 +42,8 @@ bot.addListener("join", function (channel, nick, message) {
       }
     }
 });
-//PART EVENT HANDLER
+
+// Part event handler.
 bot.addListener("part", function (channel, nick, message) { 
   for(var i=0;i<plugins.length;i++)
     {
@@ -50,7 +52,8 @@ bot.addListener("part", function (channel, nick, message) {
       }
     }
 });
-//RAW EVENT HANDLER
+
+// Raw event handler.
 bot.addListener("raw", function (message) { 
   for(var i=0;i<plugins.length;i++)
     {
@@ -60,7 +63,7 @@ bot.addListener("raw", function (message) {
     }
 });
 
-//ACTION EVENT HANDLER
+// Action event handler.
 bot.addListener("action", function (from, to, message) { 
   for(var i=0;i<plugins.length;i++)
     {
@@ -70,7 +73,7 @@ bot.addListener("action", function (from, to, message) {
     }
 });
 
-//LOAD CURRENT NICKS INTO CONFIG EVENT HANDLER
+// Load the current nicks into the config event handler.
 bot.addListener("names", function (channel, nicks) { 
   config.nicks[channel] = Object.keys(nicks);
 });
