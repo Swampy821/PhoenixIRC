@@ -16,5 +16,5 @@ logs
 results
 build
 .grunt
-
+config.js
 node_modules

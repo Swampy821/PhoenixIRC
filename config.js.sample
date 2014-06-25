@@ -9,7 +9,7 @@ exports.userName = 'PhoenixIRC';
 
 exports.realName = 'PhoenixIRC';
 
-exports.admins = ['Zimdale','Skysom'];
+exports.admins = ['IRC_USER'];
 
 exports.nicks = Array();
 
