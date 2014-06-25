@@ -3,16 +3,16 @@ var http = require('http');
 var irc = null;
 var config = {
 	redditmulti: "/user/m/multiname",
-	channels: [ "##phoebtest" ]
+	channels: [ "##phoebtest" ],
+	interval: 1800000
 };
 
-var interval = 1800000;
 var timer = null;
 var last_sub = "";
 
 exports.init = function(bot, config) {
 	irc = bot;
-	timer = setInterval(postPorn, interval);
+	timer = setInterval(postPorn, config.interval);
 }
 
 var postPorn = function () {
