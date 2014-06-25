@@ -1,4 +1,4 @@
-var adult = require('./Adult.js');
+var adult = require('../plugins/Adult.js');
 
 describe('The Adult plugin for PhoenixIRC',function() {
     describe('The message function', function() {

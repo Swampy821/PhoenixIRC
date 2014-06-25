@@ -1,4 +1,4 @@
-var beer = require('./Beer.js');
+var beer = require('../plugins/Beer.js');
 
 describe('The Beer plugin', function() {
 	describe('The message function', function(){
