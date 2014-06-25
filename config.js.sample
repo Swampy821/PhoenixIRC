@@ -33,5 +33,6 @@ exports.plugins = {
 	"liar": true,
 	"quotes": false,
 	"towel": true,
-	"youtube": false
+	"youtube": false,
+        "porn":false
 };

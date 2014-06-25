@@ -1,7 +1,7 @@
 var http = require('http');
 
 var irc = null;
-var config = {
+var pornConfig = {
 	redditmulti: "/user/m/multiname",
 	channels: [ "##phoebtest" ],
 	interval: 1800000
@@ -11,8 +11,11 @@ var timer = null;
 var last_sub = "";
 
 exports.init = function(bot, config) {
+        if(pornConfig.redditmulti==="/user/m/multiname" || config.plugins.porn===false) {
+            return;
+        }
 	irc = bot;
-	timer = setInterval(postPorn, config.interval);
+	timer = setInterval(postPorn, pornConfig.interval);
 }
 
 var postPorn = function () {
@@ -33,8 +36,8 @@ var postPorn = function () {
 			porn.rlink = "http://reddit.com" + post.permalink;
 			porn.author = post.author;
 
-			for (var i = 0; i < config.channels.length; i++) {
-				irc.say(config.channels[i], "[" + porn.subreddit + "] " + porn.title + ": " + porn.link);
+			for (var i = 0; i < pornConfig.channels.length; i++) {
+				irc.say(pornConfig.channels[i], "[" + porn.subreddit + "] " + porn.title + ": " + porn.link);
 			}
 		});
 	});
@@ -43,7 +46,7 @@ var postPorn = function () {
 var getSubreddit = function (callback) {
 	var buffer = "";
 
-    http.get("http://www.reddit.com/api/multi/user" + config.redditmulti, function(res) {
+    http.get("http://www.reddit.com/api/multi/user" + pornConfig.redditmulti, function(res) {
         res.setEncoding('utf8');
 
         res.on('data', function(chunk){
