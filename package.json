@@ -11,8 +11,7 @@
         }
     ],
     "dependencies" : {
-        "irc" : "*",
-        "request" : "~>2.37.0"
+        "irc" : "*"
     },
     "repository" : {
         "type" : "git",
