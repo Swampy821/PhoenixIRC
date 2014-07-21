@@ -34,5 +34,6 @@ exports.plugins = {
 	"quotes": false,
 	"towel": true,
 	"youtube": false,
-        "porn":false
+    "porn":false,
+    "sammich":true
 };
