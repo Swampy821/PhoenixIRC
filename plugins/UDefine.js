@@ -18,7 +18,11 @@ exports.message = function(from, to, text, message, bot, config){
 			  		try{
 				  		js = JSON.parse(chk);
 				  		if(js.list[0].definition.length>0) {
-				  			bot.say(to, from+': '+js.list[0].definition);
+				  			if(js.list[0].definition.length>3000) {
+							bot.say(to, 'Fuck you '+from+ '!');
+}else{
+							bot.say(to, from+': '+js.list[0].definition);
+}
 				  		}else{
 				  			bot.say(to, from+': I do not have a definition for that word');
 				  		}

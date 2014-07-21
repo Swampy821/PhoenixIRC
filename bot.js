@@ -1,5 +1,5 @@
 var config = require("./config.js");
-var irc = require("irc");
+var irc = require("./irc/irc.js");
 var fs = require('fs');
 
 var plugins = Array();
@@ -10,6 +10,9 @@ var bot = new irc.Client(config.server, config.botName, {
   realName:config.realName
 });
 
+bot.addListener('error', function(message) {
+    console.log(message);
+});
 
 // Auto Load All Plugins.
 var i = 0;
