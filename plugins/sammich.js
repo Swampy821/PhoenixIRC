@@ -10,7 +10,7 @@ exports.message = function(from, to, text, message, bot, config){
 		   sammichText === botName + ': make me a sandwich' ||
 		   sammichText === botName + ': make me a sandwich!' ||
 		   sammichText === botName + ': make me a sandwich.') {
-				bot.action(to,' makes ' + from + ' a delicious sammich.');
+				bot.action(to,'makes ' + from + ' a delicious sammich.');
 		}
 	}
 }
