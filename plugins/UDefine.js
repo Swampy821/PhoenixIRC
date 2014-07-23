@@ -27,7 +27,7 @@ exports.message = function(from, to, text, message, bot, config){
 				  			bot.say(to, from+': I do not have a definition for that word');
 				  		}
 			  		}catch(e) {
-			  			bot.say(to, from+': Invalid character');
+			  			bot.say(to, from+': I don\'t have a definition for that word/phrase.');
 			  		}
 			  });
 			});
