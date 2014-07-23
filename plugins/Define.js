@@ -6,7 +6,7 @@ exports.message = function(from, to, text, message, bot, config){
 			var http = require('http');
 			var options = {
 			  host: 'api.wordnik.com',
-			  path: '/v4/word.json/'+text[2]+'/definitions?limit=200&includeRelated=true&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5'
+			  path: '/v4/word.json/'+encodeURI(text.splice(2).join(" "))+'/definitions?limit=200&includeRelated=true&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5'
 			};
 			var chk = '';
 			http.get(options, function(resp){
