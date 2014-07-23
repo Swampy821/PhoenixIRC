@@ -6,7 +6,7 @@ exports.message = function(from, to, text, message, bot, config){
 			var http = require('http');
 			var options = {
 			  host: 'api.urbandictionary.com',
-			  path: '/v0/define?term='+text[2]
+			  path: '/v0/define?term='+encodeURI(text.splice(2).join(" "))
 			};
 			var chk = '';
 			http.get(options, function(resp){
