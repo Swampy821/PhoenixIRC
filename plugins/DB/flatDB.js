@@ -129,4 +129,7 @@ db.remove = function(obj) {
     this._saveDB();
     return true;
 };
+db.getDB = function() {
+    return this._dbArray;
+}
 module.exports = db;
