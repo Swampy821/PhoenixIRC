@@ -1,4 +1,4 @@
-var db = require('./flatDB/flatDB');
+var db = require('./DB/flatDB');
 var q = {};
 
 q.addQuote = function(from, to, quote) {
