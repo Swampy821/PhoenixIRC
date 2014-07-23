@@ -122,6 +122,7 @@ exports.init = function() {
 }
 //Message Event
 exports.message = function(from, to, text, message, bot, config) {
+	if(!config.plugins.quotes) { return; }
 	var quote = text.split(' ');
 	var argObj = {
 		from:from,
