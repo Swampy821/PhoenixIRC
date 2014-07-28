@@ -99,3 +99,14 @@ bitcoin price
 ```
 
 Note: this sequence can appear anywhere in a message.
+
+### Configuration Options
+You can pass an object to the configuration for the bot with a `frequency` parameter.
+This will make the bot respond roughly once every `n` times it hears this sequence.
+```json
+{
+  "plugins": {
+    "ass": { "frequency": 10 }
+  }
+}
+```
