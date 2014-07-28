@@ -20,6 +20,7 @@ exports.autoOpChannels = ['##phoenixirc'];
 exports.plugins = {
 	"admin": true,
 	"adult": true,
+  "ass": true,
 	"beer": true,
 	"bitcoin": true,
 	"define": true,

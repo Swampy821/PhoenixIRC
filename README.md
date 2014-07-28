@@ -92,3 +92,10 @@ fuck yeah <message>
 ```
 bitcoin price
 ```
+
+##Ass
+```
+<word>-ass <word>
+```
+
+Note: this sequence can appear anywhere in a message.
