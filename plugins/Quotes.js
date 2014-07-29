@@ -1,6 +1,8 @@
 var db = require('./DB/flatDB');
 var q = {};
 
+q.disableResponse = [];
+
 q.addQuote = function(from, to, quote) {
 	var d = new Date();
 	var recordDate = d.getMonth() + '/' + d.getDay() + '/' + d.getFullYear();
@@ -31,6 +33,7 @@ q.addQuoteCommand = function(arg) {
 		quote = quote.splice(1,quote.length);
 		quote = quote.join(' ');
 		this.addQuote(from,to,quote);
+		if(this.disableResponse.indexOf(to)>-1) { return; }
 		var replyQuote = quote.split('|');
 		bot.say(to,'Added quote #'+ this.getLastID() + '.');
 		for(var i=0;i<replyQuote.length;i++) {
@@ -76,7 +79,7 @@ q.getQuoteCommand = function(arg) {
 		quote=arg.quote, 
 		bot=arg.bot, 
 		config=arg.config;
-
+	if(this.disableResponse.indexOf(to)>-1) { return; }
 	if(quote[0].toLowerCase()==='!quote') {
 		if(quote.length<2) { 
 			this.sayRandomQuote(arg);
@@ -103,7 +106,7 @@ q.getLastQuoteCommand = function(arg) {
 		bot=arg.bot, 
 		config=arg.config;
 
-	if(quote[0].toLowerCase()==='!lastquote') {
+	if(quote[0].toLowerCase()==='!lastquote' && this.disableResponse.indexOf(to)===-1) {
 		var data = db.getDB();
 		var end = data.length -1;
 		var by = data[end].from;
@@ -112,6 +115,25 @@ q.getLastQuoteCommand = function(arg) {
 		this.say(bot,to,headString,0);
 		this.sayQuote(arg, data[end].quote);
 	}
+};
+
+q.toggleText = function(arg) {
+     var from =arg.from,
+         to=arg.to,
+         quote=arg.quote,
+         bot=arg.bot,
+         config=arg.config;
+     quote = quote.join(' ');
+     if(quote === config.botName + ": disableResponse") {
+	var index = this.disableResponse.indexOf(to);
+	if(index===-1) {
+            this.disableResponse.push(to);
+            bot.say(to, "Disabled text on quotes.");
+        }else{
+            this.disableResponse.splice(index,1);
+            bot.say(to, "Enabled text on quotes.");
+        }
+     };
 };
 
 
@@ -135,4 +157,5 @@ exports.message = function(from, to, text, message, bot, config) {
 	q.addQuoteCommand(argObj);
 	q.getQuoteCommand(argObj);
 	q.getLastQuoteCommand(argObj);
+	q.toggleText(argObj);
 }
