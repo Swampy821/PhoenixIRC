@@ -13,7 +13,8 @@ function FML(bot, to) {
 
 	  resp.on('end',function() {
 	  		js = JSON.parse(chk);
-	  		random = Math.round(Math.random() * js.responseData.feed.entries.length)
+	  		random = Math.round(Math.random() * js.responseData.feed.entries.length);
+			if(js.responseData.feed.entries[random] === undefined) { return; }
 	  	 	var thePost = js.responseData.feed.entries[random].content.replace(/<\/?[^>]+(>|$)/g, "");
 	  	 	bot.say(to,thePost);
 	  });
