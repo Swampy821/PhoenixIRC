@@ -20,7 +20,7 @@ exports.autoOpChannels = ['##phoenixirc'];
 exports.plugins = {
 	"admin": true,
 	"adult": true,
-  "ass": true,
+    "ass": true,
 	"beer": true,
 	"bitcoin": true,
 	"define": true,
@@ -38,5 +38,6 @@ exports.plugins = {
     "porn":false,
     "sammich":true,
     "translate":true,
-    "slap":true
+    "slap":true,
+    "calm":true
 };
