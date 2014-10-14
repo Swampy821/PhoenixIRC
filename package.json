@@ -11,7 +11,7 @@
         }
     ],
     "dependencies" : {
-      "forever-monitor": "~>1.2.3"
+        "request":"*"
     },
     "repository" : {
         "type" : "git",
