@@ -36,5 +36,7 @@ exports.plugins = {
 	"towel": true,
 	"youtube": false,
     "porn":false,
-    "sammich":true
+    "sammich":true,
+    "translate":true,
+    "slap":true
 };

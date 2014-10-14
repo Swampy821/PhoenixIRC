@@ -19,7 +19,7 @@ exports.init = function (bot, config) {
 
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-  if(text.split(' ')[0] == '!translate') {
+  if(config.plugins.translate===true && text.split(' ')[0] == '!translate') {
      var lang = text.split(' ')[1];     
      var transtext = text.split(' ').splice(2,text.length).join(' ');
      t.process(transtext, lang, function(newText) {
