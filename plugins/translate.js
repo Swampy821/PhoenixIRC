@@ -1,7 +1,7 @@
 var request = require('request');
 function translate() {}
 translate.prototype.process = function(text, language, callback) {
-   request('http://mymemory.translated.net/api/get?q='+text+'&langpair='+language+'|en', function(error, response, body) {
+   request('http://mymemory.translated.net/api/get?q='+text+'&langpair='+language, function(error, response, body) {
       body = JSON.parse(body);  
       if(body.responseData !== undefined) {
         callback(body.responseData.translatedText);
@@ -20,9 +20,9 @@ exports.init = function (bot, config) {
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
   if(text.split(' ')[0] == '!translate') {
-     
-     var transtext = text.split(' ').splice(1,text.length).join(' ');
-     t.process(transtext, 'it', function(newText) {
+     var lang = text.split(' ')[1];     
+     var transtext = text.split(' ').splice(2,text.length).join(' ');
+     t.process(transtext, lang, function(newText) {
          bot.say(to, from+': ' + newText);
      });
   }
