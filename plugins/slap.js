@@ -1,13 +1,61 @@
+function attack() {};
+
+attack.prototype.slap = function(bot, to, user) {
+	bot.action(to, 'slaps ' + user);
+};
+
+attack.prototype.stab = function(bot, to, user) {
+	bot.action(to, 'stabs ' + user);
+};
+
+attack.prototype.kick = function(bot, to, user) {
+	bot.action(to, 'kicks ' + user);
+};
+
+attack.prototype.eat = function(bot, to, user) {
+	bot.action(to, 'eats ' + user);
+};
+
+attack.prototype.fish = function(bot, to, user) {
+	bot.action(to, 'beats ' + user + ' with a large trout!');
+};
+
+
+
+var a = new attack();
+
 // Plugin initialization.
 exports.init = function (bot, config) {
 }
 
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
+	//slap
 	if(text.search(config.botName + ": slap")===0 && config.plugins.slap===true) {
 		var userToSlap = text.split(' ').splice(2,text.length).join(' ');
-		bot.action(to, 'slaps ' + userToSlap);
+		a.slap(bot, to, userToSlap);
 	}
+	//stab
+	if(text.search(config.botName + ": stab")===0 && config.plugins.slap===true) {
+		var userToSlap = text.split(' ').splice(2,text.length).join(' ');
+		a.stab(bot, to, userToSlap);
+	}
+	//kick
+	if(text.search(config.botName + ": kick")===0 && config.plugins.slap===true) {
+		var userToSlap = text.split(' ').splice(2,text.length).join(' ');
+		a.kick(bot, to, userToSlap);
+	}
+	//eat
+	if(text.search(config.botName + ": eat")===0 && config.plugins.slap===true) {
+		var userToSlap = text.split(' ').splice(2,text.length).join(' ');
+		a.eat(bot, to, userToSlap);
+	}
+	//fish
+	if(text.search(config.botName + ": fish")===0 && config.plugins.slap===true) {
+		var userToSlap = text.split(' ').splice(2,text.length).join(' ');
+		a.fish(bot, to, userToSlap);
+	}
+
 }
 
 //JOIN EVENT
