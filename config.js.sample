@@ -41,3 +41,5 @@ exports.plugins = {
     "slap":true,
     "calm":true
 };
+
+exports.blacklist = [];

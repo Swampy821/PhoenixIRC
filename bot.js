@@ -30,6 +30,13 @@ require('fs').readdirSync(__dirname + '/plugins/').forEach(function(file) {
 
 // Message Listener.
 bot.addListener("message", function (from, to, text, message){
+  /** blacklist code **/
+  if(config.blacklist.length>0) {
+    for(var i=0;i<config.blacklist.length;i++) {
+      if(config.blacklist[i].toLowerCase() === from.toLowerCase()) { return; }
+    }
+  }
+  /** end blacklist code **/
     for(var i=0;i<plugins.length;i++)
     {
       if(typeof plugins[i].message == 'function'){
