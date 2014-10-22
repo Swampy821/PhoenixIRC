@@ -20,6 +20,10 @@ attack.prototype.fish = function(bot, to, user) {
 	bot.action(to, 'beats ' + user + ' with a large trout!');
 };
 
+attack.prototype.lick = function(bot, to, user) {
+	bot.action(to, 'licks ' + user);
+};
+
 
 
 var a = new attack();
@@ -54,6 +58,11 @@ exports.message = function(from, to, text, message, bot, config){
 	if(text.search(config.botName + ": fish")===0 && config.plugins.slap===true) {
 		var userToSlap = text.split(' ').splice(2,text.length).join(' ');
 		a.fish(bot, to, userToSlap);
+	}
+	//lick
+	if(text.search(config.botName + ": lick")===0 && config.plugins.slap===true) {
+		var userToSlap = text.split(' ').splice(2,text.length).join(' ');
+		a.lick(bot, to, userToSlap);
 	}
 
 }
