@@ -7,7 +7,7 @@ var last = {
 };
 
 function w() {
-    this.interval = 10000;
+    this.interval = 90000;
 }
 
 w.prototype.init = function(config, to, bot) {
@@ -22,9 +22,11 @@ w.prototype.init = function(config, to, bot) {
 			bot.say(to,'NEW ITEM: ' + title + ' for $' + last.price);
 			bot.say(to,last.url);
 		}
-		setTimeout(function() {
-			self.init(config, to, bot);
-		}, self.interval);
+		if(config.plugins.wootOff.active===true) {
+			setTimeout(function() {
+				self.init(config, to, bot);
+			}, self.interval);
+		}
 	});
 }
 
