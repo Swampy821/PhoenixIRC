@@ -40,7 +40,11 @@ exports.plugins = {
     "translate":true,
     "slap":true,
     "calm":true,
-    "unoStop":true
+    "unoStop":true,
+    "wootOff":{
+    	apiUrl: 'http://api.woot.com/2/events/fa4a597f-8be0-48b4-8f35-ba0c0989e727.json?key={GET KEY API FROM WOOT}',
+    	active:true
+    }
 };
 
 exports.blacklist = [];
