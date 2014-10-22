@@ -39,7 +39,8 @@ exports.plugins = {
     "sammich":true,
     "translate":true,
     "slap":true,
-    "calm":true
+    "calm":true,
+    "unoStop":true
 };
 
 exports.blacklist = [];
