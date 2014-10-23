@@ -60,7 +60,7 @@ exports.message = function(from, to, text, message, bot, config){
 	if(textArray.length>1 && 
 			textArray[0].toLowerCase() === config.botName.toLowerCase() + ':' &&
 			textArray[1].toLowerCase() === 'woot') {
-		self.checkWoot(config, function(response) {
+		woot.checkWoot(config, function(response) {
 			var wObj = JSON.parse(response).Offers[0];
 			var title = wObj.Title;
 				last.title=title;
