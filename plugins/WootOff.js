@@ -61,11 +61,11 @@ exports.message = function(from, to, text, message, bot, config){
 			textArray[0].toLowerCase() === config.botName.toLowerCase() + ':' &&
 			textArray[1].toLowerCase() === 'woot') {
 		woot.checkWoot(config, function(response) {
-			var wObj = JSON.parse(response).Offers[0];
+			var wObj = JSON.parse(response)[0];
 			var title = wObj.Title;
 				last.title=title;
-				last.price = wObj.Items[0].SalePrice
-				last.url = wObj.Url;
+				last.price = wObj.Offers[0].Items[0].SalePrice
+				last.url = 'http://www.woot.com';
 				bot.say(to, 'Current Woot: ' + last.title + ' for $' + last.price + ' -- ' + last.url);
 		});
 	}
