@@ -55,14 +55,19 @@ exports.message = function(from, to, text, message, bot, config){
 			bot.say(to, 'Turning woot updates on.');
 		}
 	}
-	if(config.plugins.wootOff.active===true) {
-		var textArray = text.split(' ');
-		if(textArray.length>1 && 
+	var self = this;
+	var textArray = text.split(' ');
+	if(textArray.length>1 && 
 			textArray[0].toLowerCase() === config.botName.toLowerCase() + ':' &&
 			textArray[1].toLowerCase() === 'woot') {
-			bot.say(to, 'Current Woot: ' + last.title + ' for $' + last.price);
-			bot.say(to, last.url);
-		}
+		self.checkWoot(config, function(response) {
+			var wObj = JSON.parse(response).Offers[0];
+			var title = wObj.Title;
+				last.title=title;
+				last.price = wObj.Items[0].SalePrice
+				last.url = 'http://woot.com';
+				bot.say(to, 'Current Woot: ' + last.title + ' for $' + last.price + ' -- ' + last.url);
+		});
 	}
 }
 
