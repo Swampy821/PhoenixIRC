@@ -65,7 +65,7 @@ exports.message = function(from, to, text, message, bot, config){
 			var title = wObj.Title;
 				last.title=title;
 				last.price = wObj.Items[0].SalePrice
-				last.url = 'http://woot.com';
+				last.url = wObj.Url;
 				bot.say(to, 'Current Woot: ' + last.title + ' for $' + last.price + ' -- ' + last.url);
 		});
 	}
