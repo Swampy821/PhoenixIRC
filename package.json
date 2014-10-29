@@ -1,11 +1,8 @@
 {
     "name": "PhoenixIRC",
     "description" : "A totally awesome bot written in NodeJS",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "contributors" : [
-        {
-            "name" : "SkySom"
-        },
         {
             "name" : "Swampy821"
         }
@@ -19,7 +16,9 @@
     },
     "keywords" : [
         "irc",
-        "bot"
+        "bot",
+	"Phoenix",
+	"nodeBot"
     ],
     "license" : "MIT",
     "engines" : {
