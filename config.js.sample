@@ -45,7 +45,8 @@ exports.plugins = {
     	apiUrl: 'http://api.woot.com/2/events/fa4a597f-8be0-48b4-8f35-ba0c0989e727.json?key={GET KEY API FROM WOOT}',
     	active:true
     },
-    "decide":true
+    "decide":true,
+    "catfact":true
 };
 
 exports.blacklist = [];
