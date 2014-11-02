@@ -16,6 +16,7 @@ exports.message = function(from, to, text, message, bot, config){
 		request('http://api.openweathermap.org/data/2.5/weather?units=imperial&q=' + location, function(error, message, body) {
 			var body = JSON.parse(body);
 			var main = body.main;
+			if(main===undefined) { return; }
 			var temp = main.temp;
 			var humid = main.humidity;
 			var low = main.temp_min;
