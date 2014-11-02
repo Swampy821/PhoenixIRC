@@ -1,5 +1,5 @@
 
-function anagram(bot, to, text) {
+function anagram(bot, from, to, text) {
   var req = require('request');
   req.post('http://www.sternestmeanings.com/say.json',
            { form: { msg: text },
@@ -8,12 +8,12 @@ function anagram(bot, to, text) {
            function (error, response, body) {
              if (!error && response.statusCode === 200) {
                if (toString.call(body) === "[object Array]") {
-                 bot.say(to + body[0]);
+                 bot.say(to, from + ': ' + body[0]);
                } else {
-                 bot.say(to + ': "' + text + '" is an anagram for "' + body.message.response + '"');
+                 bot.say(to, from + ': "' + text + '" is an anagram for "' + body.message.response + '"');
                }
              } else {
-               bot.say("No anagram for you!");
+               bot.say(to, from + ": No anagram for you!");
              }
            }
   );
