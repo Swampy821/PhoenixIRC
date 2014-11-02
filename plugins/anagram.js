@@ -1,8 +1,8 @@
 
 function anagram(bot, from, to, text) {
   var req = require('request');
-  req.post('http://www.sternestmeanings.com/say.json',
-           { form: { msg: text },
+  req.post({ url: 'http://www.sternestmeanings.com/say.json',
+             form: { msg: text },
              json: true
            },
            function (error, response, body) {
