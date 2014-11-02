@@ -2,11 +2,11 @@
 function anagram(bot, from, to, text) {
   var req = require('request');
   req.post({ url: 'http://www.sternestmeanings.com/say.json',
-             form: { msg: text },
-             json: true
+             form: { msg: text }
            },
            function (error, response, body) {
              if (!error && response.statusCode === 200) {
+               body = JSON.parse(body);
                if (toString.call(body) === "[object Array]") {
                  bot.say(to, from + ': ' + body[0]);
                } else {
