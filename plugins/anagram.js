@@ -25,4 +25,4 @@ exports.message = function(from, to, text, message, bot, config) {
       text.toLowerCase().indexOf(trigger.toLowerCase()) === 0) {
     anagram(bot, to, text.substring(trigger.length);
   }
-}
+};
