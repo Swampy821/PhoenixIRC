@@ -46,7 +46,8 @@ exports.plugins = {
     	active:true
     },
     "decide":true,
-    "catfact":true
+    "catfact":true,
+    "weather":true
 };
 
 exports.blacklist = [];
