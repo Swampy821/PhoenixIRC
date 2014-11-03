@@ -48,7 +48,8 @@ exports.plugins = {
     "decide":true,
     "catfact":true,
     "weather":true,
-    "zoidburg":true
+    "zoidburg":true,
+    "chan":true
 };
 
 exports.blacklist = [];
