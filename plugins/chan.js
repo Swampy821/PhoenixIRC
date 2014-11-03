@@ -13,7 +13,7 @@ exports.message = function(from, to, text, message, bot, config){
 		  scripts: ["http://code.jquery.com/jquery.js"],
 		  done: function (errors, window) {
 		    var $ = window.$;
-			bot.say(to, from + ': http:' + $('.fileThumb:first img:first').attr('src'));
+			bot.say(to, from + ': http:' + $('.fileText:first a:first').attr('href'));
 		  }
 		});
 	}else if(config.plugins.chan===true &&
@@ -23,7 +23,7 @@ exports.message = function(from, to, text, message, bot, config){
 		  scripts: ["http://code.jquery.com/jquery.js"],
 		  done: function (errors, window) {
 		    var $ = window.$;
-			bot.say(to, from + ': http:' + $('.fileThumb:first img:first').attr('src'));
+			bot.say(to, from + ': http:' + $('.fileText:first a:first').attr('href'));
 		  }
 		});
 	}
