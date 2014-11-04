@@ -58,7 +58,7 @@ trivia.prototype.giveup = function(to, bot) {
 
 trivia.prototype.vowels = function(to, bot) {
 	if(this.triviaAnswer===null) { return; }
-	var vowels = ['a','e','i','o','u','y'];
+	var vowels = ['a','e','i','o','u','y',' '];
 	var answer = this.triviaAnswer;
 	answer = answer.toLowerCase();
 	var nAnswer = '';
