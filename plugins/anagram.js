@@ -20,7 +20,7 @@ function anagram(bot, from, to, text) {
 }
 
 exports.message = function(from, to, text, message, bot, config) {
-  var trigger = config.botName + ': anagram';
+  var trigger = '!anagram ';
   if (config.plugins.anagram &&
       text.toLowerCase().indexOf(trigger.toLowerCase()) === 0) {
     anagram(bot, from, to, text.substring(trigger.length));
