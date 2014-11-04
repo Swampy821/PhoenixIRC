@@ -6,12 +6,8 @@ function trivia() {
 }
 
 trivia.prototype.init = function(config) {
-	if(config.plugins.triviaFile === undefined ||
-		config.plugins.triviaFile.length<3) {
-		config.plugins.trivia = false;
-		return;
-	}
-	var data = fs.readFileSync(config.plugins.triviaFile, 'utf8')
+
+	var data = fs.readFileSync(this.getQuestionString(66), 'utf8')
 	
 	var triviaObj = data.split('\n');
 	for(var i=0; i<triviaObj.length; i++) {
@@ -24,6 +20,12 @@ trivia.prototype.init = function(config) {
 trivia.prototype.getRandomInt = function() {
 	return Math.floor(Math.random() * this.triviaObj.length) + 1
 };
+
+trivia.prototype.getQuestionString = function(top) {
+	var ranInt = Math.floor(Math.random() * top);
+	var intStr = (ranInt<10 ? '0' + ranInt : ranInt);
+	return 'tmp_files/questions_' + intStr;
+}
 
 trivia.prototype.ask = function(to, bot) {
 	if(this.triviaQuestion === null) {
@@ -111,6 +113,10 @@ exports.message = function(from, to, text, message, bot, config){
 		if(tArray[0].toLowerCase() === '!score' &&
 			tArray.length>1) {
 			t.score(to,bot,tArray[1]);
+		}
+		if(tArray[0].toLowerCase() === '!newquestionset') {
+			t.init(config);
+			bot.say(to, 'New question set loaded for trivia.');
 		}
 	}
 }
