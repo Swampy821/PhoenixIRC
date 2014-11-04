@@ -48,6 +48,23 @@ trivia.prototype.giveup = function(to, bot) {
 	}
 }
 
+trivia.prototype.vowels = function(to, bot) {
+	if(this.triviaAnswer===null) { return; }
+	var vowels = ['a','e','i','o','u','y'];
+	var answer = this.triviaAnswer;
+	var nAnswer = '';
+	for(var i=0; i<answer.length; i++) {
+		if(vowels.indexOf(answer[i])===-1) {
+			nAnswer += '-';
+		}else if(answer[i]===' ') {
+			nAnswer += ' '; 
+		}else{
+			nAnswer += answer[i];
+		}
+	}
+	bot.say(to, nAnswer);
+};
+
 var t = new trivia();
 
 // Plugin initialization.
@@ -69,6 +86,9 @@ exports.message = function(from, to, text, message, bot, config){
 			tArray.splice(0,1);
 			var answer = tArray.join(' ');
 			t.answer(to, from, bot, answer);
+		}
+		if(tArray[0].toLowerCase() === '!vowels') {
+			t.vowels(to, bot);
 		}
 	}
 }
