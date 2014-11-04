@@ -2,6 +2,7 @@ var fs = require('fs');
 function trivia() {
 	this.triviaQuestion = null;
 	this.triviaAnswer = null;
+	this.scoreObj = {};
 }
 
 trivia.prototype.init = function(config) {
@@ -37,6 +38,11 @@ trivia.prototype.answer = function(to, from, bot, answer) {
 	if(this.triviaAnswer !== null &&
 		this.triviaAnswer.toLowerCase() === answer.toLowerCase()) {
 		bot.say(to, 'Huzzah! ' + from + ' was right! Use !trivia for a new question!');
+		if(this.scoreObj[from.toLowerCase()] !== undefined) {
+			this.scoreObj[from.toLowerCase()] +=1;
+		}else{
+			this.scoreObj[from.toLowerCase()] = 1;
+		}
 		this.triviaQuestion = null;
 		this.triviaAnswer = null;
 	}
@@ -45,6 +51,8 @@ trivia.prototype.answer = function(to, from, bot, answer) {
 trivia.prototype.giveup = function(to, bot) {
 	if(this.triviaQuestion !== null ) {
 		bot.say(to, 'The answer was ' + this.triviaAnswer + '. Use !trivia for a new question!');
+		this.triviaQuestion = null;
+		this.triviaAnswer = null;
 	}
 }
 
@@ -63,6 +71,15 @@ trivia.prototype.vowels = function(to, bot) {
 		}
 	}
 	bot.say(to, nAnswer);
+};
+
+trivia.prototype.score = function(to, bot, user) {
+	var userLow = user.toLowerCase();
+	var userScore = 0;
+	if(this.scoreObj[userLow] !== undefined) {
+		userScore = this.scoreObj[userLow];
+	}
+	bot.say(to, user + ' has ' + userScore + ' point(s).');
 };
 
 var t = new trivia();
@@ -89,6 +106,10 @@ exports.message = function(from, to, text, message, bot, config){
 		}
 		if(tArray[0].toLowerCase() === '!vowels') {
 			t.vowels(to, bot);
+		}
+		if(tArray[0].toLowerCase() === '!score' &&
+			tArray.length>1) {
+			t.score(to,bot,tArray[1]);
 		}
 	}
 }
