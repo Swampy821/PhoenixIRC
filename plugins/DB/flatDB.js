@@ -129,6 +129,14 @@ db.remove = function(obj) {
     this._saveDB();
     return true;
 };
+db.saveObj = function(objNamePath, obj) {
+    fs.writeFileSync(objNamePath, JSON.stringify(obj));
+};
+db.openObj = function(objNamePath) {
+    return require(objNamePath);
+};
+
+
 db.getDB = function() {
     return this._dbArray;
 }

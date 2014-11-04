@@ -1,8 +1,10 @@
 var fs = require('fs');
+var db = require('./DB/flatDB');
 function trivia() {
 	this.triviaQuestion = null;
 	this.triviaAnswer = null;
 	this.scoreObj = {};
+	this.saveObj = 'tmp_files/score.json';
 }
 
 trivia.prototype.init = function(config) {
@@ -27,6 +29,20 @@ trivia.prototype.getQuestionString = function(top) {
 	return 'tmp_files/questions_' + intStr;
 }
 
+trivia.prototype.save = function() {
+	db.saveObj(this.saveObj, this.scoreObj);
+};
+trivia.prototype.load = function() {
+	try{
+		var scoreObj = db.openObj(__dirname + '/../' + this.saveObj);
+		if(typeof scoreObj === 'object') {
+			this.scoreObj = scoreObj;
+		}
+	}catch(e) {
+		this.scoreObj = {};
+	}
+};
+
 trivia.prototype.ask = function(to, bot) {
 	if(this.triviaQuestion === null) {
 		var i = this.getRandomInt();
@@ -47,6 +63,7 @@ trivia.prototype.answer = function(to, from, bot, answer) {
 		}
 		this.triviaQuestion = null;
 		this.triviaAnswer = null;
+		this.save();
 	}
 };
 
@@ -90,6 +107,7 @@ var t = new trivia();
 // Plugin initialization.
 exports.init = function (bot, config) {
 	t.init(config);
+	t.load();
 }
 
 //MESSAGE EVENT
