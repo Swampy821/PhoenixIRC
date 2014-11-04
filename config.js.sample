@@ -49,7 +49,9 @@ exports.plugins = {
     "catfact":true,
     "weather":true,
     "zoidburg":true,
-    "chan":true
+    "chan":true,
+    "trivia":true,
+    "triviaFile":"tmp_files/trivia"
 };
 
 exports.blacklist = [];
