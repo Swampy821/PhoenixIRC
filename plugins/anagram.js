@@ -1,6 +1,6 @@
+var req = require('request');
 
 function anagram(bot, from, to, text) {
-  var req = require('request');
   req.post({ url: 'http://www.sternestmeanings.com/say.json',
              form: { msg: text }
            },
@@ -23,6 +23,6 @@ exports.message = function(from, to, text, message, bot, config) {
   var trigger = config.botName + ': anagram';
   if (config.plugins.anagram &&
       text.toLowerCase().indexOf(trigger.toLowerCase()) === 0) {
-    anagram(bot, to, text.substring(trigger.length);
+    anagram(bot, from, to, text.substring(trigger.length));
   }
 };
