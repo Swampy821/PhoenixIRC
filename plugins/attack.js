@@ -12,7 +12,11 @@ function attack() {
 		"punch":"punches",
 		"smack":"smacks",
 		"masturbate":"masturbates",
-		"scratch":"scratches"
+		"scratch":"scratches",
+		"comfort":"comforts",
+		"pat":"pats",
+		"pet":"pets",
+		"lynch":"lynches"
 	};
 };
 
