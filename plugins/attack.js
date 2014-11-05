@@ -11,7 +11,8 @@ function attack() {
 		"fondle":"fondles",
 		"punch":"punches",
 		"smack":"smacks",
-		"masturbate":"masturbates"
+		"masturbate":"masturbates",
+		"scratch":"scratches"
 	};
 };
 
