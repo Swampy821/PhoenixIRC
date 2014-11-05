@@ -24,7 +24,7 @@ attack.prototype.lick = function(bot, to, user) {
 	bot.action(to, 'licks ' + user);
 };
 
-attack.prototype.rapte = function(bot, to, user) {
+attack.prototype.rape = function(bot, to, user) {
 	bot.action(to, 'rapes ' + user);
 }
 
