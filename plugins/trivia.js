@@ -8,7 +8,7 @@ function trivia() {
 }
 
 trivia.prototype.init = function(config) {
-
+	if(config.plugins.trivia===false) { return; }
 	var data = fs.readFileSync(this.getQuestionString(66), 'utf8')
 	
 	var triviaObj = data.split('\n');
