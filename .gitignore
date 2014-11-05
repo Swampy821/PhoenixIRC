@@ -18,3 +18,4 @@ build
 .grunt
 config.js
 node_modules
+tmp_files

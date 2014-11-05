@@ -39,7 +39,7 @@ exports.plugins = {
     "porn":false,
     "sammich":true,
     "translate":true,
-    "slap":true,
+    "attack":true,
     "calm":true,
     "unoStop":true,
     "wootOff":{
