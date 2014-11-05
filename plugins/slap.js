@@ -24,6 +24,10 @@ attack.prototype.lick = function(bot, to, user) {
 	bot.action(to, 'licks ' + user);
 };
 
+attack.prototype.rapte = function(bot, to, user) {
+	bot.action(to, 'rapes ' + user);
+}
+
 
 
 var a = new attack();
@@ -63,6 +67,10 @@ exports.message = function(from, to, text, message, bot, config){
 	if(text.search(config.botName + ": lick")===0 && config.plugins.slap===true) {
 		var userToSlap = text.split(' ').splice(2,text.length).join(' ');
 		a.lick(bot, to, userToSlap);
+	}
+	if(text.search(config.botName + ": rape")===0 && config.plugins.slap===true) {
+		var userToSlap = text.split(' ').splice(2,text.length).join(' ');
+		a.rape(bot, to, userToSlap);
 	}
 
 }
