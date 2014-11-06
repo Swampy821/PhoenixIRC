@@ -52,7 +52,7 @@ exports.plugins = {
     "zoidburg":true,
     "chan":true,
     "trivia":false,
-    "triviaFile":"tmp_files/trivia"
+    "excuse":true
 };
 
 exports.blacklist = [];
