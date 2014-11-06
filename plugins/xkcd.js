@@ -9,7 +9,7 @@ xk.prototype.getLatest = function(to, from, bot) {
 		var randNumber = Math.floor(Math.random() * top) + 1;
 		request('http://xkcd.com/' + randNumber + '/info.0.json', function(er, res, bod) {
 			bod = JSON.parse(bod);
-			bot.say(to, from + ': ' + bod.safe_title);
+			bot.say(to, from + ': ' + bod.safe_title + ' - ' + bod.alt);
 			bot.say(to, from + ': ' + bod.img);
 		});
 	});
@@ -19,13 +19,13 @@ xk.prototype.getSpecific = function(to, from, bot, num) {
 	if(num==='latest') {
 		request('http://xkcd.com/info.0.json', function(error, response, body) {
 			body = JSON.parse(body);
-			bot.say(to, from + ': ' + body.safe_title);
+			bot.say(to, from + ': ' + body.safe_title + ' - ' + bod.alt);
 			bot.say(to, from + ': ' + body.img);
 		});
 	}else if(typeof num === 'number'){
 		request('http://xkcd.com/' + num + '/info.0.json', function(error, response, body) {
 			body = JSON.parse(body);
-			bot.say(to, from + ': ' + body.safe_title);
+			bot.say(to, from + ': ' + body.safe_title + ' - ' + bod.alt);
 			bot.say(to, from + ': ' + body.img);
 		});
 	}
