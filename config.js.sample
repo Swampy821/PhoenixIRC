@@ -54,7 +54,8 @@ exports.plugins = {
     "trivia":false,
     "excuse":true,
     "xkcd":true,
-    "seen":true
+    "seen":true,
+    "bible":true
 };
 
 exports.blacklist = [];
