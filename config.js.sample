@@ -55,7 +55,9 @@ exports.plugins = {
     "excuse":true,
     "xkcd":true,
     "seen":true,
-    "bible":true
+    "bible":true,
+    "wa":false,
+    "waID":"-----"
 };
 
 exports.blacklist = [];

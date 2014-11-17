@@ -9,7 +9,8 @@
     ],
     "dependencies" : {
         "request":"*",
-        "jsdom":"*"
+        "jsdom":"*",
+        "node-wolfram":"*"
     },
     "repository" : {
         "type" : "git",
