@@ -7,7 +7,11 @@ function wa(config) {
 
 wa.prototype.query = function(from, to, query, bot) {
     this.Wolf.query(query, function(err, result) {
-        if(result.queryresult.pod === undefined) {
+        if(result === null
+            || result === undefined
+            || result.queryresult === null
+            || result.queryresult === undefined
+            || result.queryresult.pod === undefined) {
             bot.say(to, from + ': I do not have a response for that.');
             return;
         }
