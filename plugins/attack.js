@@ -16,7 +16,8 @@ function attack() {
 		"comfort":"comforts",
 		"pat":"pats",
 		"pet":"pets",
-		"lynch":"lynches"
+		"lynch":"lynches",
+		"suck":"sucks"
 	};
 };
 
@@ -48,7 +49,8 @@ exports.message = function(from, to, text, message, bot, config){
 	//slap
 	if(config.plugins.attack===true) {
 		var tArray = text.split(' ');
-		if(tArray.length>2) {
+		if(tArray.length>2 &&
+			tArray[0].toLowerCase() === config.botName.toLowerCase() + ':') {
 			var userToSlap = text.split(' ').splice(2,text.length).join(' ');
 			a.process(bot, to, userToSlap, tArray[1].toLowerCase());
 		}
