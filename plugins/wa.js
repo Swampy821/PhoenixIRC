@@ -29,13 +29,17 @@ exports.init = function (bot, config) {
 
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-    var textArray = text.split(' ');
-    if(config.plugins.wa
-            && textArray.length>2
-        && (textArray[0].toLowerCase() + textArray[1].toLowerCase()) === config.botName.toLowerCase() + ':wa') {
-        textArray.splice(0,2);
-        var query = textArray.join(' ');
-        W.query(from, to, query, bot);
+    try {
+        var textArray = text.split(' ');
+        if (config.plugins.wa
+            && textArray.length > 2
+            && (textArray[0].toLowerCase() + textArray[1].toLowerCase()) === config.botName.toLowerCase() + ':wa') {
+            textArray.splice(0, 2);
+            var query = textArray.join(' ');
+            W.query(from, to, query, bot);
+        }
+    }catch(e) {
+        
     }
 }
 
