@@ -20,11 +20,13 @@ exports.init = function (bot, config) {
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
   if(config.plugins.translate===true && text.split(' ')[0] == '!translate') {
-     var lang = text.split(' ')[1];     
+    try{
+	 var lang = text.split(' ')[1];     
      var transtext = text.split(' ').splice(2,text.length).join(' ');
      t.process(transtext, lang, function(newText) {
          bot.say(to, from+': ' + newText);
      });
+    }catch(e) {}
   }
 }
 
