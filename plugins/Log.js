@@ -15,7 +15,9 @@ logger.prototype.createFileIfNotFound = function() {
 
 logger.prototype.log = function(from, to, text) {
 	var self = this;
-	fs.appendFile(self.file, to + ' - ' + from + ': ' + text + '\n');
+	fs.appendFile(self.file, to + ' - ' + from + ': ' + text + '\n', function() {
+	   fs.close(self.file);	     
+	});
 };
 
 var l = new logger();
