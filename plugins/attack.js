@@ -17,7 +17,9 @@ function attack() {
 		"pat":"pats",
 		"pet":"pets",
 		"lynch":"lynches",
-		"suck":"sucks"
+		"suck":"sucks",
+		"hug":"hugs",
+		"kiss":"Kisses"
 	};
 };
 
