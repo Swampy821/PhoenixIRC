@@ -19,13 +19,13 @@ xk.prototype.getSpecific = function(to, from, bot, num) {
 	if(num==='latest') {
 		request('http://xkcd.com/info.0.json', function(error, response, body) {
 			body = JSON.parse(body);
-			bot.say(to, from + ': ' + body.safe_title + ' - ' + bod.alt);
+			bot.say(to, from + ': ' + body.safe_title + ' - ' + body.alt);
 			bot.say(to, from + ': ' + body.img);
 		});
 	}else if(typeof num === 'number'){
 		request('http://xkcd.com/' + num + '/info.0.json', function(error, response, body) {
 			body = JSON.parse(body);
-			bot.say(to, from + ': ' + body.safe_title + ' - ' + bod.alt);
+			bot.say(to, from + ': ' + body.safe_title + ' - ' + body.alt);
 			bot.say(to, from + ': ' + body.img);
 		});
 	}
