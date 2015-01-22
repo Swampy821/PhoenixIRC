@@ -104,7 +104,7 @@ trivia.prototype.score = function(to, bot, user) {
 	if(this.scoreObj[userLow] !== undefined) {
 		userScore = this.scoreObj[userLow];
 	}
-	bot.say(to, user + ' has ' + userScore + ' point(s).');
+	bot.say(to, user + ' has ' + userScore + ' internet point(s).');
 };
 
 var t = new trivia();
