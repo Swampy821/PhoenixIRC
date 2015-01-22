@@ -120,26 +120,27 @@ exports.message = function(from, to, text, message, bot, config){
 	if(config.plugins.trivia === true) {
 		var tArray = text.split(' ');
 		if(tArray[0] === undefined) { return; }
-		if(tArray[0].toLowerCase() === '!trivia') {
+		tArray[0] = tArray[0].toLowerCase();
+		if(tArray[0]=== '!trivia') {
 			t.ask(to, bot);
 		}
-		if(tArray[0].toLowerCase() === '!giveup') {
+		if(tArray[0] === '!giveup') {
 			t.giveup(to, bot);
 		}
-		if(tArray[0].toLowerCase() === '!answer') {
+		if(tArray[0] === '!answer') {
 			var tmpArray = tArray;
 			tmpArray.splice(0,1);
 			var answer = tmpArray.join(' ');
 			t.answer(to, from, bot, answer);
 		}
-		if(tArray[0].toLowerCase() === '!vowels') {
+		if(tArray[0] === '!vowels') {
 			t.vowels(to, bot);
 		}
-		if(tArray[0].toLowerCase() === '!score' &&
+		if(tArray[0] === '!score' &&
 			tArray.length>1) {
 			t.score(to,bot,tArray[1]);
 		}
-		if(tArray[0].toLowerCase() === '!newquestionset') {
+		if(tArray[0] === '!newquestionset') {
 			t.init(config);
 			bot.say(to, 'New question set loaded for trivia.');
 		}
