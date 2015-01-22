@@ -53,6 +53,11 @@ trivia.prototype.ask = function(to, bot) {
 };
 
 trivia.prototype.answer = function(to, from, bot, answer) {
+	if(to === undefined ||
+	from === undefined ||
+	answer === undefined) {
+		return;
+	}
 	if(this.triviaAnswer !== null &&
 		this.triviaAnswer.toLowerCase() === answer.toLowerCase()) {
 		bot.say(to, 'Huzzah! ' + from + ' was right! Use !trivia for a new question!');
@@ -114,6 +119,7 @@ exports.init = function (bot, config) {
 exports.message = function(from, to, text, message, bot, config){
 	if(config.plugins.trivia === true) {
 		var tArray = text.split(' ');
+		if(tArray[0] === undefined) { return; }
 		if(tArray[0].toLowerCase() === '!trivia') {
 			t.ask(to, bot);
 		}
