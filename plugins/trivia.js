@@ -127,8 +127,9 @@ exports.message = function(from, to, text, message, bot, config){
 			t.giveup(to, bot);
 		}
 		if(tArray[0].toLowerCase() === '!answer') {
-			tArray.splice(0,1);
-			var answer = tArray.join(' ');
+			var tmpArray = tArray;
+			tmpArray.splice(0,1);
+			var answer = tmpArray.join(' ');
 			t.answer(to, from, bot, answer);
 		}
 		if(tArray[0].toLowerCase() === '!vowels') {
