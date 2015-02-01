@@ -15,8 +15,8 @@ logger.prototype.createFileIfNotFound = function() {
 
 logger.prototype.log = function(from, to, text) {
 	var self = this;
-	fs.appendFile(self.file, to + ' - ' + from + ': ' + text + '\n', function() {
-	   fs.close(self.file);	     
+	fs.appendFile(self.file, to + ' - ' + from + ': ' + text + '\n', function(err) {
+	   if (err) throw err; 
 	});
 };
 
@@ -25,7 +25,7 @@ var l = new logger();
 
 // Plugin initialization.
 exports.init = function (bot, config) {
-	l.createFileIfNotFound();
+	
 }
 
 //MESSAGE EVENT
