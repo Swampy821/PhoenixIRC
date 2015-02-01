@@ -4,15 +4,6 @@ function logger(){
 	this.file = 'tmp_files/log.txt';
 }
 
-logger.prototype.createFileIfNotFound = function() {
-	var self = this;
-	fs.exists(self.file, function(exists) {
-		if(!exists) {
-			fs.writeFile(self.file);
-		}
-	});
-};
-
 logger.prototype.log = function(from, to, text) {
 	var self = this;
 	fs.appendFile(self.file, to + ' - ' + from + ': ' + text + '\n', function(err) {
@@ -25,7 +16,7 @@ var l = new logger();
 
 // Plugin initialization.
 exports.init = function (bot, config) {
-	
+
 }
 
 //MESSAGE EVENT
