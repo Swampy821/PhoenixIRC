@@ -58,7 +58,8 @@ exports.plugins = {
     "bible":true,
     "wa":false,
     "waID":"-----",
-    "wiki": true
+    "wiki": true,
+    "giffy": true
 };
 
 exports.blacklist = [];
