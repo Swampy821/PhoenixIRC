@@ -11,8 +11,12 @@ exports.message = function(from, to, text, message, bot, config) {
                 text = encodeURI(text);
                 request('http://api.giphy.com/v1/gifs/search?q=' + text + '&api_key=dc6zaTOxFJmzC&limit=1&offset=0', function(error, message, body) {
         			var body = JSON.parse(body);
-        			var link = body.data[0].images.fixed_height.url;
-        			bot.say(to, from + ": " + link);
+                    if(body.data.length) {
+            			var link = body.data[0].images.fixed_height.url;
+            			bot.say(to, from + ": " + link);
+                    }else{
+                        bot.say(to, from + ": I do not have a giffy for you.");
+                    }
         		});
             }
         }
