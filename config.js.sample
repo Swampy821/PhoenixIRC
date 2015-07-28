@@ -59,7 +59,8 @@ exports.plugins = {
     "wa":false,
     "waID":"-----",
     "wiki": true,
-    "giffy": true
+    "giffy": true,
+    "gur": false //PLACE API KEY HERE.
 };
 
 exports.blacklist = [];
