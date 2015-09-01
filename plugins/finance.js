@@ -33,7 +33,7 @@ exports.message = function(from, to, text, message, bot, config){
 								changeText = " (" + change + "%)";
 							}
 						}
-						bot.say(to, from + ": " + quote.symbol + " - " + quote.name + " - $" + quote.price + "" + changeText);
+						bot.say(to, from + ": " + quote.symbol + " - " + quote.name + " - $" + quote.price + "" + changeText + "      https://www.google.com/finance?q=" + quote.symbol + "");
 					}catch(e) {
 						bot.say(to, from + ": Could not find that symbol.");
 					}
