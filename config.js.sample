@@ -60,7 +60,8 @@ exports.plugins = {
     "waID":"-----",
     "wiki": true,
     "giffy": true,
-    "gur": false //PLACE API KEY HERE.
+    "gur": false, //PLACE API KEY HERE.
+    "finance": true,
 };
 
 exports.blacklist = [];
