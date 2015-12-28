@@ -2,7 +2,6 @@ PhoenixIRC
 ==========
 
 A node Bot.
-<<< Goto #devcom on freenode to test out the bot for yourself! >>>
 
 ##PhoenixIRC Installation
 Clone this repository
