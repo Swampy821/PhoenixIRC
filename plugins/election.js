@@ -32,7 +32,7 @@ var e = new el();
 
 //MESSAGE EVENT
 exports.message = function(from, to, text, message, bot, config){
-    var patt = new RegExp(`${config.botName.toLowerCase()}: [election|erection]*`, "gi");
+    var patt = new RegExp(`${config.botName.toLowerCase()}: election|${config.botName.toLowerCase()}: erection`, "gi");
     var res = patt.test(text);
     if(res) {
         e.getResults( bot, to ).then( ( data ) => {
