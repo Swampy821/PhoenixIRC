@@ -10,8 +10,8 @@ el.prototype.getResults = function(bot, to) {
     return new Promise( ( resolve, reject ) => {
         	request( "http://data.cnn.com/ELECTION/2016/bop/p.json", function( error, response, body ) {
                 const data = JSON.parse( body );
-                let returnString = `The results of the election so far: \n${data.candidates[0].lname} - ${data.candidates[0].cvotes} Votes - ${data.candidates[0].evotes} Electoral Votes`;
-                returnString += `\n${data.candidates[1].lname} - ${data.candidates[1].cvotes} Votes - ${data.candidates[1].evotes} Electoral Votes`;
+                let returnString = `The results of the election so far: \n${data.candidates[0].lname} - ${data.candidates[0].cvotes} Votes - ${data.candidates[0].evotes} Electoral Votes ${data.candidates[0].evotes > data.candidates[1].evotes ? " - Leading" : ""}`;
+                returnString += `\n${data.candidates[1].lname} - ${data.candidates[1].cvotes} Votes - ${data.candidates[1].evotes} Electoral Votes ${data.candidates[1].evotes > data.candidates[0].evotes ? " - Leading" : ""}`;
                 resolve( returnString );
             } );
             
