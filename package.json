@@ -1,0 +1,30 @@
+{
+  "name": "PhoenixIRC",
+  "description": "A totally awesome bot written in NodeJS",
+  "version": "0.0.2",
+  "contributors": [
+    {
+      "name": "Swampy821"
+    }
+  ],
+  "dependencies": {
+    "jquery-deferred": "^0.3.1",
+    "jsdom": "*",
+    "node-wolfram": "*",
+    "request": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Swampy821/PhoenixIRC.git"
+  },
+  "keywords": [
+    "irc",
+    "bot",
+    "Phoenix",
+    "nodeBot"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}
