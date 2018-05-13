@@ -1,0 +1,21 @@
+{
+  "name": "PhoenixIRC",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "expires": "0.0.1",
+    "express": "^4.16.3",
+    "http": "0.0.0",
+    "log": "^1.4.0",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
