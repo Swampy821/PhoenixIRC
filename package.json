@@ -8,6 +8,7 @@
     "expires": "0.0.1",
     "express": "^4.16.3",
     "http": "0.0.0",
+    "irc-framework": "^2.11.0",
     "log": "^1.4.0",
     "redis": "^2.8.0"
   },

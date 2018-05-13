@@ -1,3 +1,5 @@
 [
-    "systemPlugins/log"
+    "systemPlugins/log",
+    "irc",
+    "ircPlugins/exampleIRCPlugin"
 ]
